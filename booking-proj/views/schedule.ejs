@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Groups</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+        <div>
+            <%
+                let dateoptions = {
+                    year:'numeric',
+                    month:'short',
+                    day:'numeric'
+                }
+            %>
+            <table class = "table">
+                <thead>
+                    <tr>
+                        <th>Trainer</th>
+                        <th>Room</th>
+                        <th>Group</th>
+                        <th>Skill</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i =0; i<booking.length; i++) {%>
+                        <tr>
+                            <td><%=booking[i].trainer%></td>
+                            <td><%=booking[i].room%></td>
+                            <td><%=booking[i].group%></td>
+                            <td><%=booking[i].skill%></td>
+                            <td><%=booking[i].date.toLocaleDateString("en-gb",dateoptions)%></td>
+                        </tr>
+                    <%}%>
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+
+</html>

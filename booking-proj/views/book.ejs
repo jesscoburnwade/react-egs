@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Groups</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+        <div>
+            <form action = "/newbooking" method = "POST">
+
+                <div class = "form-group">
+                    <label for = "groups">Groups:</label>
+                    <select class = "form-control" id = "groups" name = "groups">
+                        <%console.log(group)%>
+                        <% for (var i = 0;i<group.length; i++) { %>
+                            <option value = "<%= group[i]._id %>"><%= group[i].name %></option>
+                        <%}%>
+                    </select>
+                </div>
+
+                <div class = "form-group">
+                    <label for = "skills">Skills:</label>
+                    <select class = "form-control" id = "skills" name = "skills">
+                            <%console.log(skills)%>
+                            <% for (var i = 0;i<skills.length; i++) { %>
+                                <option value = "<%= skills[i]._id %>"><%- skills[i].skill %></option>
+                            <%}%>
+                    </select>
+                </div>
+
+                <div class = "form-group">
+                    <label for = "date-pick">Date:</label>
+                    <input type = "date" id = "datepick" name = "datepick">
+                </div>
+
+                <button type = "submit">Submit</button>
+
+            </form>
+        </div>
+
+    </body>
+
+</html>

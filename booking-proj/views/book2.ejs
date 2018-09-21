@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Groups</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+        <div>
+            <form action = "/complete" method = "POST">
+
+                <div class = "form-group">
+                    <label for = "rooms">Room:</label>
+                    <select class = "form-control" id = "rooms" name = "rooms">
+                        <%console.log(rooms)%>
+                        <% for (var i = 0;i<rooms.length; i++) { %>
+                            <option value = "<%= rooms[i]._id %>"><%= rooms[i].title %></option>
+                        <%}%>
+                    </select>
+                </div>
+
+                <div class = "form-group">
+                    <label for = "trainers">Trainer:</label>
+                    <select class = "form-control" id = "trainers" name = "trainers">
+                            <%console.log(trainers)%>
+                            <% for (var i = 0;i<trainers.length; i++) { %>
+                                <option value = "<%= trainers[i]._id %>"><%- trainers[i].name %></option>
+                            <%}%>
+                    </select>
+                </div>
+
+                <button type = "submit">Submit</button>
+
+            </form>
+        </div>
+
+    </body>
+
+</html>
